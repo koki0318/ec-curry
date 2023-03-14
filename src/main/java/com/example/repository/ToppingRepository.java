@@ -12,6 +12,11 @@ import org.springframework.stereotype.Repository;
 
 import com.example.domain.Topping;
 
+/**
+ * トッピングを操作するリポジトリ.
+ * @author watanabkouki
+ *
+ */
 @Repository
 public class ToppingRepository {
 

@@ -76,6 +76,12 @@ public class OrderRepository {
 		return order;
 	}
 
+	/**
+	 * ユーザIDと注文状況から検索します.
+	 * @param userId　ユーザID　
+	 * @param status　注文状況
+	 * @return　注文リスト
+	 */
 	public Order findByUserIdAndStatus(Integer userId, Integer status) {
 
 		StringBuilder findByUserIdAndStatusSql = new StringBuilder();
@@ -131,6 +137,11 @@ public class OrderRepository {
 
 	}
 
+	/**　
+	 * 仮ユーザIDとユーザIDを統合します.
+	 * @param tentativeUserId　仮ユーザーID
+	 * @param userId　ユーザID
+	 */
 	public void updateUserId(Integer tentativeUserId, Integer userId) {
 		StringBuilder updateUserIdSql = new StringBuilder();
 		updateUserIdSql.append("UPDATE " + TABLE_NAME);
@@ -145,6 +156,10 @@ public class OrderRepository {
 
 	}
 
+	/**
+	 * 注文情報を更新します.
+	 * @param order　注文情報
+	 */
 	public void update(Order order) {
 		StringBuilder updateSql = new StringBuilder();
 		updateSql.append("UPDATE " + TABLE_NAME);
@@ -203,6 +218,10 @@ public class OrderRepository {
 		return orderList;
 	}
 
+	/**
+	 * 注文情報を削除します.
+	 * @param orderId 注文ID
+	 */
 	public void deleteByOrderId(Integer orderId) {
 		StringBuilder deleteByOrderId = new StringBuilder();
 		deleteByOrderId.append("DELETE FROM " + TABLE_NAME);

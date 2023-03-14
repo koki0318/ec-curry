@@ -12,6 +12,12 @@ import com.example.service.LoginAndLogoutService;
 
 import jakarta.servlet.http.HttpSession;
 
+/**
+ * カートを表示するコントローラ.
+ * 
+ * @author sugaharatakamasa
+ *
+ */
 @Controller
 @RequestMapping("/toShowList")
 public class ToShowListController {
@@ -21,6 +27,11 @@ public class ToShowListController {
 	@Autowired
 	private LoginAndLogoutService loginAndLogoutService;
 
+	/**
+	 * カート内を表示する.
+	 * @param loginUser 
+	 * @return カート情報
+	 */
 	@GetMapping("")
 	public String toShowList(@AuthenticationPrincipal LoginUser loginUser) {
 
@@ -36,7 +47,6 @@ public class ToShowListController {
 				loginAndLogoutService.deleteOrderByOrderId(tentativeOrderId);
 			} else {
 				loginAndLogoutService.updateUserId(tentativeUserId, user.getId());
-//			service.updateOrderItemId(tentativeOrderId, orderId);
 				orderId = tentativeOrderId;
 			}
 		}

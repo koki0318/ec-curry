@@ -13,7 +13,7 @@ import com.example.service.ShowDetailService;
 /**
  * 詳細画面を表示するコントローラ.
  * 
- * @author watanabe
+ * @author watanabekouki
  *
  */
 @Controller

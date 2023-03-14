@@ -25,6 +25,13 @@ public class LoginAndLogoutController {
 	@Autowired
 	private HttpSession session;
 
+	/**
+	 * 入力値チェックを行う.
+	 * @param form　ログインフォーム
+	 * @param model　モデル
+	 * @param error　エラー
+	 * @return　ログインページ
+	 */
 	@GetMapping("")
 
 	public String toLogin(LoginForm form, Model model, String error) {

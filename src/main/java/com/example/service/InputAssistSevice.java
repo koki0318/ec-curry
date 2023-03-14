@@ -7,6 +7,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.domain.User;
 import com.example.repository.UserRepository;
 
+/**
+ * お届け先自動補完を行うクラス.
+ * @author sugaharatakamasa
+ *
+ */
 @Service
 @Transactional
 public class InputAssistSevice {

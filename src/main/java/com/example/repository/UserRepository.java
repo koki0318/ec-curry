@@ -47,6 +47,11 @@ public class UserRepository {
 		return userList.get(0);
 	}
 
+	/**
+	 * 主キー検索します.
+	 * @param userId ユーザID
+	 * @return　ユーザ情報
+	 */
 	public User load(Integer userId) {
 		StringBuilder loadSql = new StringBuilder();
 		loadSql.append("SELECT");

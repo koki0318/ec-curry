@@ -76,6 +76,12 @@ public class OrderController {
 		return "redirect:/orderFinished";
 	}
 
+	/**
+	 * 配達時間の入力値チェック.
+	 * @param form 注文フォーム
+	 * @param result　リザルト
+	 * @return　入力値チェック結果
+	 */
 	public BindingResult addDeliveryTimeError(OrderForm form, BindingResult result) {
 		// 入力値チェック(配達日時)
 		LocalDate deliveryDate = LocalDate.parse(form.getDeliveryDate());

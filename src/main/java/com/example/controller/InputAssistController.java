@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.domain.User;
 import com.example.service.InputAssistSevice;
 
+/**
+ * 入力値を自動補完する機能のコントローラ.
+ * 
+ * @author sugaharatakamasa
+ *
+ */
 @RestController
 @RequestMapping("input-assist")
 public class InputAssistController {
@@ -18,6 +24,12 @@ public class InputAssistController {
 	@Autowired
 	private InputAssistSevice service;
 
+	/**
+	 * ユーザIDとキーからユーザ情報を取得.
+	 * @param userId ユーザID
+	 * @param key　キー
+	 * @return　該当ユーザ情報
+	 */
 	@GetMapping("")
 	public Map<String, User> check(Integer userId,Integer key) {
 		System.out.println(userId);

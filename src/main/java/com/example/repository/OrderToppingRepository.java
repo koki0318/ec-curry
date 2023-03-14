@@ -30,7 +30,11 @@ public class OrderToppingRepository {
 			OrderTopping.class);
 
 	private static final String TABLE_NAME = "order_toppings";
-
+	/**
+	 * トッピング情報を挿入します.
+	 * @param orderTopping トッピング注文情報
+	 * @return　トッピング注文情報
+	 */
 	public OrderTopping insert(OrderTopping orderTopping) {
 		StringBuilder insertSql = new StringBuilder();
 		insertSql.append("INSERT INTO " + TABLE_NAME);

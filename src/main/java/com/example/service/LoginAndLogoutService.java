@@ -32,6 +32,12 @@ public class LoginAndLogoutService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	/**
+	 * ログインを行う.
+	 * @param form　フォーム　
+	 * @param tentativeUserId　仮ユーザID
+	 * @return　ユーザ情報
+	 */
 	public User login(LoginForm form, Integer tentativeUserId) {
 		User user = userRepository.findByEmail(form.getEmail());
 		if (user == null) {
@@ -48,6 +54,11 @@ public class LoginAndLogoutService {
 		}
 	}
 
+	/**
+	 * ユーザIDから注文情報を取得する.
+	 * @param userId ユーザID
+	 * @return　注文情報
+	 */
 	public Integer pickUpOrderId(Integer userId) {
 		Integer status = 0;
 		Order order = orderRepository.findByUserIdAndStatus(userId, status);
@@ -58,15 +69,29 @@ public class LoginAndLogoutService {
 		}
 	}
 
+	/**
+	 * 仮ユーザIDとユーザIDを統合する.
+	 * @param tentativeOrderId
+	 * @param orderId
+	 */
 	public void updateOrderItemId(Integer tentativeOrderId, Integer orderId) {
 		orderItemRepository.updateOrderId(tentativeOrderId, orderId);
 
 	}
 
+	/**
+	 * 仮ユーザとユーザIDを統合する.
+	 * @param tentativeUserId 仮ユーザID
+	 * @param userId　ユーザID
+	 */
 	public void updateUserId(Integer tentativeUserId, Integer userId) {
 		orderRepository.updateUserId(tentativeUserId, userId);
 	}
 
+	/**
+	 * 注文情報を削除する.
+	 * @param orderId 注文ID
+	 */
 	public void deleteOrderByOrderId(Integer orderId) {
 		orderRepository.deleteByOrderId(orderId);
 	}

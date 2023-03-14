@@ -86,6 +86,11 @@ public class OrderItemRepository {
 		return orderItemList;
 	}
 
+	/**
+	 * 仮ユーザIDとユーザIDを統合する.
+	 * @param tentativeOrderId　仮ユーザID
+	 * @param orderId　ユーザID 
+	 */
 	public void updateOrderId(Integer tentativeOrderId, Integer orderId) {
 		StringBuilder updateOrderIdSql = new StringBuilder();
 		updateOrderIdSql.append("UPDATE " + TABLE_NAME);
